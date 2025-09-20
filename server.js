@@ -12,7 +12,7 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:3000', 
     'http://localhost:8080', 
-    'https://cse-341-project2-577p.onrender.com/' 
+    'https://cse-341-project2-577p.onrender.com' 
 ];
 
 const corsOptions = {

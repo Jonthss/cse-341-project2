@@ -5,10 +5,15 @@
     "description": "API to manage books and authors.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
-  "basePath": "/",
-  "schemes": [
-    "http"
+  "servers": [
+    {
+      "url": "https://cse-341-project2-577p.onrender.com",
+      "description": "Servidor de Produção (Render)"
+    },
+    {
+      "url": "http://localhost:8080",
+      "description": "Servidor de Desenvolvimento Local"
+    }
   ],
   "paths": {
     "/books/": {

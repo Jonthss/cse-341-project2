@@ -2,20 +2,56 @@
   "swagger": "2.0",
   "info": {
     "title": "My Library API",
-    "description": "API to manage books and authors.",
+    "description": "API to manage books and authors. Some routes require authentication via GitHub OAuth.",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://cse-341-project2-577p.onrender.com",
-      "description": "Servidor de Produção (Render)"
-    },
-    {
-      "url": "http://localhost:8080",
-      "description": "Servidor de Desenvolvimento Local"
-    }
+  "host": "cse-341-project2-577p.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
   ],
+  "securityDefinitions": {
+    "oAuthSample": {
+      "type": "oauth2",
+      "authorizationUrl": "/auth/login",
+      "flow": "implicit",
+      "scopes": {
+        "read": "Read access to data",
+        "write": "Write access to data"
+      }
+    }
+  },
   "paths": {
+    "/auth/login": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/github/callback": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/books/": {
       "get": {
         "description": "",
@@ -71,6 +107,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
@@ -151,6 +190,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -172,6 +214,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"
@@ -225,6 +270,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
@@ -293,6 +341,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "404": {
             "description": "Not Found"
           },
@@ -314,6 +365,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
           },
           "404": {
             "description": "Not Found"

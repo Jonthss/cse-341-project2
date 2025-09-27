@@ -51,7 +51,8 @@ router.get('/logout', (req, res, next) => {
                     <h1>You have been successfully logged out!</h1>
                     <p>Thank you for visiting.</p>
                     <div class="links">
-                    <a href="/auth/login">Log in again</a>
+                        <a href="/">Go to Home Page</a>
+                        <a href="/auth/login">Log in again</a>
                     </div>
                 </div>
                 </body>
